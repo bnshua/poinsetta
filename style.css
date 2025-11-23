@@ -51,6 +51,11 @@ body {
   opacity: 0.9;
 }
 
+.smallsub {
+  font-size: clamp(0.8rem, 1.2vw, 1.0rem);
+  opacity: 0.9;
+}
+
 .qr-wrap img {
   width: 300px;          /* smaller size */
   max-width: 70vw;       /* still responsive on phones */

@@ -9,6 +9,22 @@
   </head>
 
   <body background="https://blob.gifcities.org/gifcities/2WUPGDA56AOK6TE5SL4BCDKXHZYAUONK.gif">
+
+    <!-- Top-right hamburger menu -->
+    <nav class="top-nav">
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+      </button>
+
+      <div class="dropdown" role="menu">
+        <a role="menuitem" href="symptoms.html">Symptoms</a>
+        <a role="menuitem" href="treatments.html">Treatment</a>
+        <a role="menuitem" href="prevention.html">Prevention</a>
+      </div>
+    </nav>
+
     <div class="page">
       <header class="hero">
         <h1 class="tc">Poinsettia</h1>
@@ -84,19 +100,38 @@
       </main>
 
       <!-- More Info + QR Code -->
-<section class="card more-info">
-  <h2 class="tc">More information on Poinsiettias and your pets!</h2>
-  <p class="tc hint">Scan the QR code below for extra resources.</p>
-  <div class="qr-wrap">
-    <a 
-      href="https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/poinsettia"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open ASPCA poinsettia safety page"
-    >
-      <img src="qr-code.png" alt="QR code for more information" />
-    </a>
-  </div>
-</section>
+      <section class="card more-info">
+        <h2 class="tc">More information on Poinsiettias and your pets!</h2>
+        <p class="tc hint">Scan the QR code below for extra resources.</p>
+        <div class="qr-wrap">
+          <a 
+            href="https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/poinsettia"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open ASPCA poinsettia safety page"
+          >
+            <img src="qr-code.png" alt="QR code for more information" />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const topNav = document.querySelector(".top-nav");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = topNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen);
+      });
+
+      // click outside to close
+      document.addEventListener("click", (e) => {
+        if (!topNav.contains(e.target)) {
+          topNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
   </body>
 </html>

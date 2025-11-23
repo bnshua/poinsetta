@@ -54,6 +54,7 @@ body {
 .smallsub {
   font-size: clamp(0.8rem, 1.2vw, 1.0rem);
   opacity: 0.9;
+  text-align: center;
 }
 
 .qr-wrap img {
